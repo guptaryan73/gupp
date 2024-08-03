@@ -1,11 +1,18 @@
 import './App.css';
-import Footer from './Homepage/Footer';
-import Navbar from './Homepage/Navbar';
+import { Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Homepage from './pages/Homepage';
+import Notfound from './pages/error/Notfound';
 
 function App() {
   return (
     <>
       <Navbar/>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="*" element={<Notfound />} />
+      </Routes>
       <Footer/>
     </>
   )
