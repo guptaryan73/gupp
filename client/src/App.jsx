@@ -4,19 +4,28 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
 import Notfound from './pages/error/Notfound';
+import Login from './components/Login';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path="/" element= {<Homepage />} />
+        <Route path="/sign-in" element={<Login />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Homepage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="*" element={<Notfound />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
-  )
+  );
 }
 
 export default App;
-
