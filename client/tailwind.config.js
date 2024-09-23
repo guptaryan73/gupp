@@ -1,3 +1,4 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,12 +7,11 @@ export default {
   ],
   theme: {
     extend: {
-      colors:
-      {
+      colors: {
         'gupp-red': '#F64019',
-
-      }
+      },
     },
   },
+  darkMode: 'class', // Enables dark mode with 'dark' class
   plugins: [],
 }
